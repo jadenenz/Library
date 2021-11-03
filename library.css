@@ -1,6 +1,5 @@
 body {
     background-color: steelblue;
-    gap: 25px;
 }
 
 .wholePage {
@@ -24,6 +23,7 @@ body {
   .cardContainer {
     padding: 2px 16px;
     background-color: slategray;
+    position: relative;
   }
 
   .bookPopup {
@@ -46,4 +46,16 @@ body {
   .libraryContainer {
     display: flex;
     gap: 25px;
+  }
+
+  .cardButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .readButton {
+    /* position: absolute;
+    bottom: 0;
+    left: 0; */
   }
