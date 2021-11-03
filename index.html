@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Library App</title>
-    <script src="library.js" defer></script>
-    <link rel="stylesheet" href="library.css">
-</head>
-<body>
-    <button>ADD NEW BOOK</button>
-    <!-- <div class="card">
-        <img src="https://i.pinimg.com/736x/49/f7/25/49f725a9f2b62ea80603f3fe51289735--le-design-icon-design.jpg"
-        alt="book icon" style="width: 100%">
-        <div class="cardContainer">
-            <h4><b>Book Title</b></h4>
-            <p>Book description</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Library App</title>
+        <script src="library.js" defer></script>
+        <link rel="stylesheet" href="library.css">
+    </head>
+    <body>
+    <div class="wholePage">
+        <button id="newbook">ADD NEW BOOK</button>
+        <div class="bookPopup" id='bookPopup'>
+            <form class="formContainer">
+                <h2>Add Book Information</h2>
+                <label for="title">
+                    <strong>Title</strong>
+                </label>
+                <input type='text' id='title' placeholder=
+                'Book title' name='title' required>
+                <label for="author">
+                    <strong>Author</strong>
+                </label>
+                <input type='text' id='author' placeholder=
+                'Author' name='author' required>
+                <label for="pages">
+                    <strong>Pages</strong>
+                </label>
+                <input type='text' id='pages' placeholder=
+                'Pages' name='pages' required>
+                <label for="read">
+                    <strong>Already read?</strong>
+                </label>
+                <input type='checkbox' id='read' name='read'>
+                <button type='submit' id='submit'>Submit</button>
+                
+                
+            </form>
         </div>
-    </div> -->
-        
-
+        <div class='libraryContainer'>
+        </div>
+    </div>
+    
+    
     
 </body>
 </html>
