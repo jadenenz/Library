@@ -114,7 +114,7 @@ function displayLibrary() {
         readButton.addEventListener('click', changeReadStatus)
         button.classList.add('cardButton');
         button.innerHTML = 'Remove'
-        readButton.innerHTML = 'Change read status'
+        readButton.innerHTML = 'Change read'
         readButton.classList.add('readButton');
         card.setAttribute('data-index', index);
         card.classList.add('card');
