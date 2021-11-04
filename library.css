@@ -7,6 +7,18 @@ body {
   height: 100%;
 }
 
+.titleSection {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.newButtonSection {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -52,10 +64,13 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
+    border: solid 2px black;
   }
 
   .readButton {
-    /* position: absolute;
-    bottom: 0;
-    left: 0; */
+    border: solid 2px black;
+  }
+
+  .cardButton:hover, .readButton:hover {
+    background-color: lightgrey;
   }
