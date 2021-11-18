@@ -1,15 +1,18 @@
 // let myLibrary = [];
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    toString() {
+        return `${this.title} by  ${this.author}, ${this.pages} pages long, has read: ${this.read}`
+    }
+}
 setLibrary();
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function() {
-      return title +" by " + author + ", " + pages + ", " + read
-      }
-  }
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -63,10 +66,11 @@ function changeReadStatus(e) {
 }
 
 function setLibrary(){
-    if(!localStorage.getItem('libArray')){
+    if(!localStorage.getItem('libArray')){ //If no local storage make empty library array
         myLibrary = [];
     } else {
        myLibrary = JSON.parse(localStorage.getItem('libArray'))
+       myLibrary = myLibrary.map(data => new Book(data.title, data.author, data.pages, data.read)) //Readds the class to the objects from json
     }
 }
 
@@ -75,35 +79,25 @@ function saveArray() {
     localStorage.setItem('libArray', jsonLib);
 }
 
-// const book1 = new Book("Lord of the Rings", "Tolkien", "297","Not yet read")
-// const book2 = new Book("Alice in Wonderland", "Lewis Carrol", "450", "read")
-const newbook = document.getElementById('newbook');
+
+const newbookBtn = document.getElementById('newbook');
 const submit = document.getElementById('submit');
 const form = document.querySelector('form');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    const newBook = new Book(title.value, author.value, pages.value, read.checked)
-    console.log(newBook)
-    addBookToLibrary(newBook)
+    const freshBook = new Book(title.value, author.value, pages.value, read.checked)
+    console.log(freshBook)
+    addBookToLibrary(freshBook)
     clearCards();
     displayLibrary();
     saveArray();
 });
 
-newbook.addEventListener("click", function(){
+newbookBtn.addEventListener("click", function(){
     openTheForm();
 });
 
-// submit.addEventListener("click", function(){
-//     const newBook = new Book(title.value, author.value, pages.value, "yes")
-//     console.log(newBook)
-//     addBookToLibrary(newBook)
-// });
-
-
-// addBookToLibrary(book1);
-// addBookToLibrary(book2);
 
 function displayLibrary() {
     myLibrary.forEach((book,index) => {
